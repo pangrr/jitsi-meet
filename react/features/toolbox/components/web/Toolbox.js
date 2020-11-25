@@ -86,6 +86,7 @@ import OverflowMenuButton from './OverflowMenuButton';
 import OverflowMenuProfileItem from './OverflowMenuProfileItem';
 import ToolbarButton from './ToolbarButton';
 import VideoSettingsButton from './VideoSettingsButton';
+import { PollButton } from '../../../polls';
 
 /**
  * The type of the React {@code Component} props of {@link Toolbox}.
@@ -1033,6 +1034,10 @@ class Toolbox extends Component<Props, State> {
             <RecordButton
                 key = 'record'
                 showLabel = { true } />,
+            this._shouldShowButton('polls')
+                && <PollButton
+                    key = 'polls'
+                    showLabel = { true } />,
             this._shouldShowButton('sharedvideo')
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.sharedvideo') }
